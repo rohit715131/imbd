@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WelCome To IMDB Movie</title>
+   <head>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Economica" rel="stylesheet">
+	<style>
+	.backPage{cursor: pointer;}
+	</style>
+ </head>
+	
+   <body>
+	  <!-- Loader -->
+		<div class="container d-flex justify-content-center">
+				<div class="loader"></div>	
+		</div>
+	<div id="wrapper">
+		<div class="mainCont">
+				<!--<button id="fetchData" class="btn btn-primary">Fetch data</button>-->
+				<!-- Loader -->
+				<div class="container d-flex justify-content-center">
+					<div class="loader"></div>	
+				</div>
+				<!--loader section end here-->
+
+				<!-- Loader -->
+				<div class="container-fluid d-flex justify-content bg-head py-2" >
+					<h3 class="backPage"><i class="fas fa-arrow-left"></i> &nbsp;WELCOME TO IMDB MOVIES</h3>	
+				</div>
+				<!--loader section end here-->
+
+				<!-- search box start from here -->
+				<div class="container-fluid my-3 hideContent">
+					<div class="row">
+						<div class="col-md-3 d-flex bg-sea align-items-center justify-content-center ">
+							<p class="mb-0 py-2">Search By:</p>
+						</div>
+						<div class="col-md-9 p-0">
+							<ul class="nav nav-tabs" id="myTab" role="tablist">
+								<li class="nav-item bg-navy align-items-center">
+								  <a class="nav-link active" id="home-tab" data-toggle="tab" href="#movieTitles" role="tab" aria-controls="home" aria-selected="true">Movie Title</a>
+								</li>
+								<li class="nav-item">
+								  <a class="nav-link" id="profile-tab" data-toggle="tab" href="#yearVthTitle" role="tab" aria-controls="profile" aria-selected="false">Movie Title & Year</a>
+								</li>
+								<li class="nav-item">
+								  <a class="nav-link" id="contact-tab" data-toggle="tab" href="#movieIds	" role="tab" aria-controls="contact" aria-selected="false">Movie Id</a>
+								</li>
+							  </ul>
+							  
+						</div>
+					</div>
+
+					<!-- title block start from here -->
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="movieTitles" role="tabpanel" aria-labelledby="home-tab">
+							<div class="search pt-4 container">
+								<div class="row">
+									<div class="col-sm-10 p-0 mb-3">
+										<input type="text" class="form-control p-2 rounded-0" name="search1" placeholder="Movie Title...." id="movieTitle" required /> 
+										<p class="errors" style="color:red; display:none;">Please enter the title</p>
+									</div>
+									<div class="col-sm-2 p-0">
+										<a href="#" id="search-title" class="d-flex  search-button p-2 justify-content-center align-items-center ">Search</a>
+									</div>
+								</div>
+									
+							</div>
+						</div>
+						<!-- title block end from here -->
+						
+						<!-- title with year block start from here -->
+						<div class="tab-pane fade" id="yearVthTitle" role="tabpanel" aria-labelledby="profile-tab">
+							<div class="search pt-4 container">
+								<div class="row">
+									<div class="col-sm-4 mb-3">
+										<input type="text" class="form-control p-2 rounded-0" name="search1" placeholder="Movie Title...." id="movieTitle2" required /> 
+										<p class="errors" style="color:red; display:none;">Please enter the title</p>
+									</div>
+
+									<div class="col-sm-4 mb-3">
+										<input type="number" id="movieYear2" class="form-control p-2 rounded-0" name="search1" placeholder="Movie Year...."  required /> 
+									</div>
+									
+									<div class="col-sm-4 mb-3">
+										<a href="#" id="searchTitleId2" class="d-flex search-button p-2 justify-content-center align-items-center ">Search</a>
+									</div>
+								</div>
+									
+							</div>
+						</div>
+						<!-- title with year block start from here -->
+
+
+						<!-- ID block start from here -->
+						<div class="tab-pane fade" id="movieIds" role="tabpanel" aria-labelledby="contact-tab">
+							<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+								<div class="search pt-4 container">
+									<div class="row">
+										<div class="col-sm-10 p-0 mb-3">
+											<input type="text" class="form-control p-2 rounded-0" name="search1" placeholder="Movie Id...." id="movieYear3" required /> 
+										</div>
+										<div class="col-sm-2 p-0">
+											<a href="#" id="searchTitleId3" class="d-flex  search-button p-2 justify-content-center align-items-center ">Search</a>
+										</div>
+									</div>
+										
+								</div>
+							</div>
+						</div>
+						<!-- ID block start from here -->
+					  </div>
+				</div>
+
+				<!-- search box end from here -->
+
+
+
+			<div class="container showDetails" style="display:none;">
+				
+				<div class="row">
+						<div class="col-sm-4">
+							<img src="" alt="" class="img-fluid img-responsive" id="posterImg"></p>
+						</div>
+						<div class="col-sm-8">
+							<div class="row">
+								<div class="col-sm-2">TITLE:</div>
+								<div class="col-sm-10 movie_txt" id="movieTitles1"></div>
+							</div>
+							<div class="row">
+								<div class="col-sm-2">IMDB ID:</div>
+								<div class="col-sm-10 movie_txt" id="movieId"></div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-2">YEAR:</div>
+								<div class="col-sm-10 movie_txt" id="movieYears"></div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-2">Released:</div>
+								<div class="col-sm-10 movie_txt" id="movieReleased"></div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-2">Director:</div>
+								<div class="col-sm-10 movie_txt" id="movieDirector"></div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-2">Writer:</div>
+								<div class="col-sm-10 movie_txt" id="movieWriter"></div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-2">Language:</div>
+								<div class="col-sm-10 movie_txt" id="movieLanguage"></div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-2">Awards:</div>
+								<div class="col-sm-10 movie_txt" id="movieAwards"></div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-2">Country:</div>
+								<div class="col-sm-10 movie_txt" id="movieCountry"></div>
+							</div>
+
+							<div class="row">
+								<div class="col-sm-2">Ratings:</div>
+								<div class="col-sm-10 movie_txt" id="movieRatings"></div>
+							</div>
+
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		<!--mainCont-->
+	</div>
+	<!--wrapper-->
+   
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/fontawesome-all.min.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
+   </body>
+	
+</html>
+
